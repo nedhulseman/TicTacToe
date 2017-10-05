@@ -12,10 +12,10 @@ import time
 #if an incorrect string is input, then it will give another prompt for an input
 def playerType(p): #@param p for player 1 or 2
     player=""
-    while player != "smart robot" and player != "human" and player!="dumb robot":
-        player=input("Is player " + str(p) + " a human, smart robot or dumb robot?")
+    while player != "r sammy" and player != "human" and player!="dumb robot":
+        player=input("Is player " + str(p) + " a human, R Sammy or dumb robot?")
         player=player.lower()
-        if player != "robot" and player != "human" and player!="dumb robot":
+        if player != "r sammy" and player != "human" and player!="dumb robot":
             print("Failure is not an option, and neither is your input. Try again cowboy")
     return player
 
@@ -138,9 +138,8 @@ def smartRobot(*board, letter, opponentLetter):
         print("rule 5")
         rule=True
         return dumbRobotMove(*board)
-#smart robot
+
 #function that keeps all possible 2 in a row combinations for first rule
-#rule four corners
 def winningMove(*board, letter):
     if board[0]==letter and board[1]==letter and board[2]==" ":
         return 2 
@@ -160,8 +159,6 @@ def winningMove(*board, letter):
         return 7  
     elif board[4]==letter and board[5]==letter and board[3]==" ":
         return 3 
-#def smartRobot(*board):
-    
 
 #checks all possible ways a player could win     
 def checkWinner(board):#@param list board
@@ -215,7 +212,7 @@ while catsGame==False and winner==False:
     elif player1=="dumb robot":
         time.sleep(2)
         turn=dumbRobotMove(*board)
-    elif player1=="smart robot":
+    elif player1=="r sammy":
         time.sleep(2)
         turn=smartRobot(*board, letter='X', opponentLetter='O')
     board=update(board, turn, 'X')
@@ -230,7 +227,7 @@ while catsGame==False and winner==False:
         elif player2=="dumb robot":
             time.sleep(2)
             turn=dumbRobotMove(*board)
-        elif player2=="smart robot":
+        elif player2=="r sammy":
             time.sleep(2)
             turn=smartRobot(*board, letter="O", opponentLetter="X")
         board=update(board, turn, 'O')
