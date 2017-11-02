@@ -12,7 +12,7 @@ import time
 #if an incorrect string is input, then it will give another prompt for an input
 def playerType(p): #@param p for player 1 or 2
     player=""
-    while player != "r sammy" and player != "chetter hummin" and player!="dumb robot":
+    while player != "r sammy" and player != "chetter hummin" and player!="human":
         player=input("Is player " + str(p) + " a human, Chetter Hummin or R Sammy?")
         player=player.lower()
         if player != "r sammy" and player != "human" and player!="chetter hummin":
